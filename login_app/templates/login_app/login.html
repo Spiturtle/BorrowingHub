@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - BorrowingHub</title>
+    {% load static %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'login_app/styles.css' %}">
+</head>
+<body class="login-body">
+    <header class="login-header-bar">
+        <div class="login-header-content">
+            <span class="login-header-logo">BH</span>
+            <span class="login-header-title">Borrowing Hub</span>
+            <nav class="login-header-nav">
+                <a href="{% url 'login_app:login' %}" class="login-header-link login-header-link-active">Login</a>
+                <a href="{% url 'registration_app:register' %}" class="login-header-link">Register</a>
+            </nav>
+        </div>
+    </header>
+    <a href="{% url 'landing_app:landing' %}" class="login-back-link">← Go back to landing page</a>
+    <div class="login-main-container">
+        <div class="login-card">
+            <div class="login-header">
+                <span class="login-logo">BH</span>
+                <span class="login-title">Borrowing Hub</span>
+            </div>
+            <div class="login-subtitle">Sign in to your account</div>
+            {% if messages %}
+                <div class="login-messages">
+                    {% for message in messages %}
+                        <div class="login-alert login-alert-{{ message.tags }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <form method="post" class="login-form">
+                {% csrf_token %}
+                <div class="login-form-group">
+                    <label for="{{ form.username.id_for_label }}" class="login-label">Username</label>
+                    {{ form.username }}
+                </div>
+                <div class="login-form-group">
+                    <label for="{{ form.password.id_for_label }}" class="login-label">Password</label>
+                    {{ form.password }}
+                </div>
+                <button type="submit" class="login-btn">Sign In</button>
+            </form>
+            <div class="login-footer">
+                <span>Don't have an account?</span> <a href="{% url 'registration_app:register' %}" class="login-link">Sign up here</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

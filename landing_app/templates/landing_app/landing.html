@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BorrowingHub - Welcome</title>
+    {% load static %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'landing_app/styles.css' %}">
+</head>
+<body class="landing-body">
+    <header class="landing-header">
+        <nav class="landing-nav">
+            <div class="landing-brand">
+                <span class="landing-logo">BH</span>
+                <div class="landing-title-group">
+                    <span class="landing-title">Borrowing Hub</span>
+                    <span class="landing-subtitle">Track your borrowed items</span>
+                </div>
+            </div>
+            <div class="landing-nav-actions">
+                <a href="{% url 'login_app:login' %}" class="landing-login-btn">Login</a>
+                <a href="{% url 'registration_app:register' %}" class="landing-register-btn">Register</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="landing-hero">
+            <h1 class="landing-hero-title">Borrow smarter. Track everything.</h1>
+            <p class="landing-hero-desc">Keep tabs on books, tools, and gadgets you lend and borrow — all in one clean dashboard.</p>
+            <div class="landing-hero-ctas">
+                <a href="{% url 'registration_app:register' %}" class="landing-hero-btn">Get Started Free</a>
+                <a href="{% url 'login_app:login' %}" class="landing-hero-link">I already have an account</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
