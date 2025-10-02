@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Borrowing Hub</title>
+    {% load static %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'dashboard_app/styles.css' %}">
+</head>
+<body class="dashboard-body">
+    <nav class="dashboard-navbar" style="background:#fff;border-bottom:1px solid #f3f4f6;">
+        <div class="dashboard-navbar-content" style="padding:0 32px;max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;min-height:80px;">
+            <div class="dashboard-logo" style="display:flex;align-items:center;gap:16px;">
+                <span style="width:44px;height:44px;border-radius:12px;background:#ef4444;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.3rem;">BH</span>
+                <div style="display:flex;flex-direction:column;align-items:flex-start;">
+                    <span style="font-size:1.2rem;font-weight:700;color:#0f172a;">Borrowing Hub</span>
+                    <span style="color:#64748b;font-size:0.95rem;margin-top:2px;">Track your borrowed items</span>
+                </div>
+            </div>
+            <div class="dashboard-header-right" style="display:flex;align-items:center;gap:16px;">
+                <a href="{% url 'dashboard_app:dashboard' %}" class="dashboard-header-link" style="color:#ef4444;font-weight:700;padding:10px 18px;border-radius:8px;font-size:1rem;text-decoration:none;transition:background 0.2s;">Dashboard</a>
+                <a href="{% url 'dashboard_app:profile' %}" class="dashboard-header-link" style="color:#ef4444;font-weight:700;padding:10px 18px;border-radius:8px;font-size:1rem;text-decoration:none;transition:background 0.2s;">Profile</a>
+                <a href="{% url 'login_app:logout' %}" class="dashboard-header-link" style="color:#ef4444;font-weight:700;padding:10px 18px;border-radius:8px;font-size:1rem;text-decoration:none;transition:background 0.2s;">Logout</a>
+            </div>
+        </div>
+    </nav>
+    <div class="dashboard-container" style="max-width:600px;margin:48px auto 0 auto;background:#fff;padding:32px 32px 24px 32px;border-radius:14px;box-shadow:0 4px 16px #0001;">
+        <h1 style="font-size:2rem;font-weight:800;color:#0f172a;margin-bottom:12px;">Your Profile</h1>
+        <div style="color:#64748b;font-size:1.1rem;margin-bottom:24px;">View and update your account details below.</div>
+        <div style="margin-bottom:18px;">
+            <strong>Username:</strong> {{ user.username }}<br>
+            <strong>Email:</strong> {{ user.email }}
+        </div>
+        <a href="#" class="dashboard-action-btn" style="background:#ef4444;color:#fff;max-width:200px;font-weight:700;padding:12px 0;border-radius:8px;text-align:center;text-decoration:none;">Edit Profile</a>
+    </div>
+</body>
+</html>
