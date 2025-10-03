@@ -18,4 +18,4 @@ def profile_view(request):
     context = {
         'user': request.user,
     }
-    return render(request, 'dashboard_app/profile.html', context)
+    return render(request, 'profile_app/profile.html', context)

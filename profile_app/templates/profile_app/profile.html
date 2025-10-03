@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Borrowing Hub</title>
+    {% load static %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'profile_app/profile.css' %}">
+</head>
+<body class="dashboard-body">
+    <nav class="dashboard-navbar">
+        <div class="dashboard-navbar-content">
+            <div class="dashboard-logo">
+                <span class="dashboard-logo-icon">BH</span>
+                <div class="dashboard-logo-text">
+                    <span class="dashboard-logo-title">Borrowing Hub</span>
+                    <span class="dashboard-logo-subtitle">Track your borrowed items</span>
+                </div>
+            </div>
+            <div class="dashboard-header-right">
+                <a href="{% url 'dashboard_app:dashboard' %}" class="dashboard-header-link">Dashboard</a>
+                <a href="{% url 'dashboard_app:profile' %}" class="dashboard-header-link">Profile</a>
+                <a href="{% url 'login_app:logout' %}" class="dashboard-header-link">Logout</a>
+            </div>
+        </div>
+    </nav>
+    <div class="dashboard-container">
+        <h1>Your Profile</h1>
+        <div class="dashboard-subtitle">View and update your account details below.</div>
+        <div class="dashboard-user-info">
+            <strong>Username:</strong> {{ user.username }}<br>
+            <strong>Email:</strong> {{ user.email }}
+        </div>
+        <a href="#" class="dashboard-action-btn">Edit Profile</a>
+    </div>
+</body>
+</html>

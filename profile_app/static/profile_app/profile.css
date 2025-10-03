@@ -1,0 +1,127 @@
+/* General */
+body.dashboard-body {
+    font-family: 'Inter', sans-serif;
+    background: #f9fafb;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.dashboard-navbar {
+    background: #fff;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.dashboard-navbar-content {
+    padding: 0 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 80px;
+}
+
+.dashboard-logo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.dashboard-logo-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: #ef4444;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.3rem;
+}
+
+.dashboard-logo-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.dashboard-logo-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.dashboard-logo-subtitle {
+    color: #64748b;
+    font-size: 0.95rem;
+    margin-top: 2px;
+}
+
+/* Navbar links */
+.dashboard-header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.dashboard-header-link {
+    color: #ef4444;
+    font-weight: 700;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.dashboard-header-link:hover {
+    background: #fee2e2;
+}
+
+/* Profile Container */
+.dashboard-container {
+    max-width: 600px;
+    margin: 48px auto 0 auto;
+    background: #fff;
+    padding: 32px 32px 24px 32px;
+    border-radius: 14px;
+    box-shadow: 0 4px 16px #0001;
+}
+
+.dashboard-container h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 12px;
+}
+
+.dashboard-subtitle {
+    color: #64748b;
+    font-size: 1.1rem;
+    margin-bottom: 24px;
+}
+
+.dashboard-user-info {
+    margin-bottom: 18px;
+}
+
+/* Action button */
+.dashboard-action-btn {
+    display: block;
+    background: #ef4444;
+    color: #fff;
+    max-width: 200px;
+    font-weight: 700;
+    padding: 12px 0;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.dashboard-action-btn:hover {
+    background: #dc2626;
+}
+/* Responsive */
