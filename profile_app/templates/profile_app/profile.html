@@ -22,19 +22,126 @@
             </div>
             <div class="dashboard-header-right">
                 <a href="{% url 'dashboard_app:dashboard' %}" class="dashboard-header-link">Dashboard</a>
-                <a href="{% url 'dashboard_app:profile' %}" class="dashboard-header-link">Profile</a>
-                <a href="{% url 'login_app:logout' %}" class="dashboard-header-link">Logout</a>
+                <a href="#" onclick="confirmLogout(event)" class="dashboard-header-link">Logout</a>
             </div>
         </div>
     </nav>
+    
     <div class="dashboard-container">
         <h1>Your Profile</h1>
         <div class="dashboard-subtitle">View and update your account details below.</div>
-        <div class="dashboard-user-info">
-            <strong>Username:</strong> {{ user.username }}<br>
-            <strong>Email:</strong> {{ user.email }}
+        
+        <!-- Personal Information Section -->
+        <div class="profile-section">
+            <h2 class="profile-section-title">Personal Information</h2>
+            <div class="profile-info-grid">
+                <div class="profile-info-item">
+                    <b><span class="profile-label">Username: </span></b>
+                    <span class="profile-value">{{ user.username }}</span>
+                </div>
+                <div class="profile-info-item">
+                    <b><span class="profile-label">Email: </span></b>
+                    <span class="profile-value">{{ user.email }}</span>
+                </div>
+                <div class="profile-info-item">
+                    <b><span class="profile-label">First Name: </span></b>
+                    <span class="profile-value">{{ user.first_name|default:"Not set" }}</span>
+                </div>
+                <div class="profile-info-item">
+                    <b><span class="profile-label">Last Name: </span></b>
+                    <span class="profile-value">{{ user.last_name|default:"Not set" }}</span>
+                </div>
+                <div class="profile-info-item">
+                    <b><span class="profile-label">Member Since: </span></b>
+                    <span class="profile-value">{{ user.date_joined|date:"F d, Y" }}</span>
+                </div>
+                <div class="profile-info-item">
+                    <b><span class="profile-label">Last Login: </span></b>
+                    <span class="profile-value">{{ user.last_login|date:"F d, Y - g:i A" }}</span>
+                </div>
+            </div>
+            <a href="#" class="dashboard-action-btn">Edit Profile</a>
         </div>
-        <a href="#" class="dashboard-action-btn">Edit Profile</a>
+
+        <!-- Password Management Section -->
+        <div class="profile-section">
+            <h2 class="profile-section-title">Password & Security</h2>
+            <p class="profile-section-desc">Update your password to keep your account secure.</p>
+            <a href="#" class="dashboard-action-btn secondary">Change Password</a>
+        </div>
+
+        <!-- Account Actions Section -->
+        <div class="profile-section danger-section">
+            <h2 class="profile-section-title">Danger Zone</h2>
+            <p class="profile-section-desc">Permanently delete your account and all associated data. This action cannot be undone.</p>
+            <button class="dashboard-action-btn danger" onclick="confirmDelete()">Delete Account</button>
+        </div>
     </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <h3>Delete Account</h3>
+            <p>Are you sure you want to delete your account? This action cannot be undone and all your data will be permanently removed.</p>
+            <div class="modal-actions">
+                <button class="modal-btn cancel" onclick="closeDeleteModal()">Cancel</button>
+                <button class="modal-btn confirm" onclick="deleteAccount()">Yes, Delete My Account</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logout Confirmation Modal -->
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <h3>Confirm Logout</h3>
+            <p>Are you sure you want to logout? You will need to sign in again to access your account.</p>
+            <div class="modal-actions">
+                <button class="modal-btn cancel" onclick="closeLogoutModal()">Cancel</button>
+                <button class="modal-btn confirm" onclick="confirmLogoutAction()">Yes, Logout</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Delete Account Modal
+        function confirmDelete() {
+            document.getElementById('deleteModal').style.display = 'flex';
+        }
+
+        function closeDeleteModal() {
+            document.getElementById('deleteModal').style.display = 'none';
+        }
+
+        function deleteAccount() {
+            alert('Account deletion would be processed here');
+            closeDeleteModal();
+        }
+
+        // Logout Modal
+        function confirmLogout(event) {
+            event.preventDefault();
+            document.getElementById('logoutModal').style.display = 'flex';
+        }
+
+        function closeLogoutModal() {
+            document.getElementById('logoutModal').style.display = 'none';
+        }
+
+        function confirmLogoutAction() {
+            window.location.href = "{% url 'login_app:logout' %}";
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const deleteModal = document.getElementById('deleteModal');
+            const logoutModal = document.getElementById('logoutModal');
+            if (event.target == deleteModal) {
+                closeDeleteModal();
+            }
+            if (event.target == logoutModal) {
+                closeLogoutModal();
+            }
+        }
+    </script>
 </body>
 </html>

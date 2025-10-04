@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout - Borrowing Hub</title>
+    {% load static %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'logout_app/logout.css' %}">
+</head>
+<body class="logout-body">
+    <div class="logout-container">
+        <div class="logout-card">
+            <div class="logout-icon">
+                <span class="logout-logo">BH</span>
+            </div>
+            <h1 class="logout-title">Successfully Logged Out</h1>
+            <p class="logout-message">You have been successfully logged out of your account. Thank you for using Borrowing Hub!</p>
+            <div class="logout-actions">
+                <a href="{% url 'login_app:login' %}" class="logout-btn primary">Login Again</a>
+                <a href="{% url 'landing_app:landing' %}" class="logout-btn secondary">Go to Home</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

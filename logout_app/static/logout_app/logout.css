@@ -1,0 +1,115 @@
+/* General */
+body.logout-body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Logout Container */
+.logout-container {
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+}
+
+/* Logout Card */
+.logout-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    padding: 48px 40px;
+    text-align: center;
+}
+
+/* Logout Icon */
+.logout-icon {
+    margin-bottom: 24px;
+}
+
+.logout-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #ef4444;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+/* Logout Title */
+.logout-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 16px;
+}
+
+/* Logout Message */
+.logout-message {
+    font-size: 1.05rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+/* Logout Actions */
+.logout-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Logout Buttons */
+.logout-btn {
+    display: block;
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.logout-btn.primary {
+    background: #ef4444;
+    color: #fff;
+}
+
+.logout-btn.primary:hover {
+    background: #dc2626;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.logout-btn.secondary {
+    background: #f1f5f9;
+    color: #0f172a;
+}
+
+.logout-btn.secondary:hover {
+    background: #e2e8f0;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .logout-card {
+        padding: 36px 28px;
+    }
+
+    .logout-title {
+        font-size: 1.5rem;
+    }
+
+    .logout-message {
+        font-size: 1rem;
+    }
+}

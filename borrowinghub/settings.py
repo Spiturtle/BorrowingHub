@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'login_app',
     'registration_app',
     'profile_app',
+    'logout_app',
 ]
 
 MIDDLEWARE = [
@@ -111,7 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Manila'
 
 USE_I18N = True
 
