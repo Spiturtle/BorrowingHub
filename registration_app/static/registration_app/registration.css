@@ -38,6 +38,12 @@
 .register-form-errors ul { list-style: none; padding: 0; margin: 0; }
 .register-form-errors li { margin-bottom: 0.18rem; }
 
+.register-error-input {
+    border-color: #e63946;
+    background-color: #ffe5e5;
+}
+
+
 @media (max-width: 560px) {
   .register-card { padding: 22px 6px 18px 6px; }
 }

@@ -26,14 +26,15 @@
 .login-form { width: 100%; display: flex; flex-direction: column; gap: 16px; }
 .login-form-group { display: flex; flex-direction: column; gap: 6px; }
 .login-label { font-weight: 600; color: #0f172a; font-size: 1rem; margin-bottom: 2px; }
-.login-form-group input { padding: 12px 14px; border: 1.5px solid #e5e7eb; border-radius: 8px; font-size: 1rem; font-family: inherit; transition: border-color 0.2s; }
-.login-form-group input:focus { outline: none; border-color: #ef4444; }
+.login-input { padding: 12px 14px; border: 1.5px solid #e5e7eb; border-radius: 8px; font-size: 1rem; font-family: inherit; transition: border-color 0.2s; width: 100%; }
+.login-input:focus { outline: none; border-color: #ef4444; }
 .login-btn { background: #ef4444; color: #fff; border: none; padding: 12px 0; border-radius: 8px; font-weight: 700; font-size: 1.08rem; margin-top: 6px; cursor: pointer; transition: background 0.2s; box-shadow: 0 2px 8px #ef444420; }
 .login-btn:hover { background: #dc2626; }
+.login-btn:disabled { background: #9ca3af; cursor: not-allowed; }
 .login-footer { margin-top: 18px; color: #64748b; font-size: 0.98rem; text-align: center; }
 .login-link { color: #ef4444; text-decoration: none; font-weight: 600; margin-left: 4px; }
 .login-link:hover { text-decoration: underline; color: #b91c1c; }
 
 @media (max-width: 560px) {
-  .login-card { padding: 22px 6px 18px 6px; }
+  .login-card { padding: 22px 16px 18px 16px; }
 }
